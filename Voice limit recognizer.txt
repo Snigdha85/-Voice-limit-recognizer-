@@ -1,0 +1,38 @@
+"""
+ This is the "Voice limit recognizer" code.Here a noise limit set
+ previously,and ask to input the surrounding noise,the code detect,are 
+  you in safe,good or in danger position.
+"""
+noise_limit=60 #decible(db)
+Good= "\U0001F603"
+safe= "\U0001F601"
+danger="\U0001F621"
+def print_intro():
+    print("Hi everyone, I wish warm welcome,to all in my project.")
+    print("The project is mainly based on noise indicator parameter.")
+    print("-------------------------------------------------------")
+
+def main():
+    print_intro()
+    #put the surrounding noise in numerical number.
+    noise= float(input("Enter your surrounding noise in numerical numbers: "))
+    # while the noise is differ from the noise limit,following loops used.
+    while noise_limit != noise:
+      if noise_limit >= noise:
+        print("You are in safe zone! your surrounding noise is " + str(noise) + " decibles " + Good + Good)
+      else:
+        print("You are in danger zone!! your surrounding noise is " + str(noise) + " decibles " + danger)
+        print("")
+        # ask to enter next surrounding noise
+      noise= float(input("Enter your surrounding noise in numerical numbers: "))
+      # if surrounding noise is equal to noise limit then print the following.
+    print("'Congratulation',You are absolutely fine and present in limit zone!" + " " + safe)
+    
+
+
+
+
+
+ 
+if __name__ == '__main__':
+    main()
